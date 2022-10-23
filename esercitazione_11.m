@@ -1,4 +1,5 @@
-% In order to understand the concept of non-stationarity of the image signal (see for
+% ES 11
+%In order to understand the concept of non-stationarity of the image signal (see for
 % reference to figure 7.1 of the book,) write the code which extracts 4 blocks of 32 X 32
 % pixels of a preferred image and compute and plot the histograms.
 clear;
