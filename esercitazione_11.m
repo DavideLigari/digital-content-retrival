@@ -16,6 +16,7 @@ block4 = image((3 * xLenght) + 1:imSize(1), (3 * yLenght) + 1:imSize(2), :);
 
 figure(1);
 
+
 subplot(2, 5, 1);
 imshow(image);
 
@@ -28,6 +29,7 @@ imshow(block1);
 subplot(2, 5, 7);
 imhist(block1);
 
+subplot(2, 5, 3);
 imshow(block2);
 
 subplot(2, 5, 8);
