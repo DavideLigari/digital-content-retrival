@@ -12,7 +12,7 @@ A=imread("digitalContentRetrival/matlab/image.jpeg","jpeg");
 A=checkGrey(A);
 
 tmp=size(A);
-tmp
+
 res= tmp(1)*tmp(2);
 
 figure(1)
@@ -60,14 +60,3 @@ title('image');
 imshow(A);
 title('hystogram');
 imhist(A);
-
-
-%check if the image is grey level, 
-% in case it isn't it returns the grey level image
-function mat = checkGrey(mat)
-    tmp=size(size(mat));
-    if(tmp(2)==3)
-        mat=rgb2gray(mat);
-    end
-    size(mat)
-end
