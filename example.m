@@ -20,7 +20,7 @@ title('Original Grayscale Image', 'FontSize', fontSize);
 set(gcf, 'Position', get(0,'Screensize')); % Maximize figure.
 message = sprintf('Left click and hold to begin drawing.\nSimply lift the mouse button to finish');
 uiwait(msgbox(message));
-hFH = imfreehand();
+hFH = drawfreehand();
 % Create a binary image ("mask") from the ROI object.
 binaryImage = hFH.createMask();
 % Display the freehand mask.

@@ -39,10 +39,7 @@ size(B)
 pause;
 
 diff=A-B;
-diff= nonzeros(diff);
-diff
-
-pause
+diff = nonzeros(diff);
 
 % es 4
 % Select one pixel of the image by asking the coordinate by a keyboard input, modify it in
