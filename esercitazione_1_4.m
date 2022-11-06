@@ -7,7 +7,14 @@
 % for the execution of the commands in sequence and save it in your working folder. The .m
 % file has to be properly commented. Understand the difference between script and user-
 % defined function.
+% Clear command window.
+clc;
+% Delete all variables.
 clear;
+% Close all figure windows except those created by imtool.
+close all;
+% Close all figure windows created by imtool.
+imtool close all;
 A=imread("digitalContentRetrival/matlab/image.jpeg","jpeg");
 A=checkGrey(A);
 

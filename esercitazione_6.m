@@ -1,7 +1,14 @@
 % ES 6
 % Perform a histogram equalization to improve the visual quality of the image (hints: try
 % function histeq). Display the original image and the improved image.
+% Clear command window.
+clc;
+% Delete all variables.
 clear;
+% Close all figure windows except those created by imtool.
+close all;
+% Close all figure windows created by imtool.
+imtool close all;
 
 A=imread("digitalContentRetrival/matlab/rgbImage.jpeg","jpeg");
 

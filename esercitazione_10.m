@@ -3,7 +3,14 @@
 % the code which computes the entropy. Compare the computed value to the value provided
 % by the built-in MATLAB function entropy.
 
+% Clear command window.
+clc;
+% Delete all variables.
 clear;
+% Close all figure windows except those created by imtool.
+close all;
+% Close all figure windows created by imtool.
+imtool close all;
 
 [file, path] = uigetfile({'*.tiff;*.jpg;*.png;*.jpeg'}, "select an image");
 original = imread(strcat(path, file));

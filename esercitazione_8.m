@@ -2,7 +2,14 @@
 % Write the code to compute the histogram of a grey level image (two channel) and display
 % in the same window the image and its histogram. Try the same on a color RGB image, by
 % displaying the histograms on the three-color channel.
+% Clear command window.
+clc;
+% Delete all variables.
 clear;
+% Close all figure windows except those created by imtool.
+close all;
+% Close all figure windows created by imtool.
+imtool close all;
 
 [file,path] = uigetfile({'*.tif;*.jpg;*.png;*.jpeg'},"select an image");
 imm=imread(strcat(path,file));

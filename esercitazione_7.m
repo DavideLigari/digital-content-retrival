@@ -2,9 +2,14 @@
 % Write the code capable of reducing the number of intensity levels in a image from 256 to
 % 2, in integer powers of 2. The desired number of intensity levels needs to be a variable
 % input to your program.
+% Clear command window.
+clc;
+% Delete all variables.
 clear;
-
-% grey level image 
+% Close all figure windows except those created by imtool.
+close all;
+% Close all figure windows created by imtool.
+imtool close all;
 
 A=imread("digitalContentRetrival/matlab/rgbImage.jpeg","jpeg");
 A=checkGrey(A);

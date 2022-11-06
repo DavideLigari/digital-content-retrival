@@ -6,10 +6,14 @@
 % the coefficients, the maximum value/2, ...) to investigate different strategy of thresholding
 % masking.
 
-clc; % Clear command window.
-clear;  % Delete all variables.
-close all; % Close all figure windows except those created by imtool.
-imtool close all; % Close all figure windows created by imtool.
+% Clear command window.
+clc;
+% Delete all variables.
+clear;
+% Close all figure windows except those created by imtool.
+close all;
+% Close all figure windows created by imtool.
+imtool close all;
 
 [file, path] = uigetfile({'*.tiff;*.jpg;*.png;*.jpeg'}, "select an image");
 original = imread(strcat(path, file));
