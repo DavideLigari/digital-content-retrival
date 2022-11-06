@@ -28,9 +28,9 @@ subplot(2, 3, 2);
 imshow(binaryImage);
 title('Binary mask of the region', 'FontSize', fontSize);
 % Calculate the area, in pixels, that they drew.
-numberOfPixels1 = sum(binaryImage(:))
+numberOfPixels1 = sum(binaryImage(:));
 % Another way to calculate it that takes fractional pixels into account.
-numberOfPixels2 = bwarea(binaryImage)
+numberOfPixels2 = bwarea(binaryImage);
 % Get coordinates of the boundary of the freehand drawn region.
 structBoundaries = bwboundaries(binaryImage);
 xy=structBoundaries{1}; % Get n by 2 array of x,y coordinates.
