@@ -11,58 +11,52 @@ close all;
 % Close all figure windows created by imtool.
 imtool close all;
 
-[file,path] = uigetfile({'*.tif;*.jpg;*.png;*.jpeg'},"select an image");
-imm=imread(strcat(path,file));
+[file, path] = uigetfile({'*.tif;*.jpg;*.png;*.jpeg'}, "select an image");
+imm = imread(strcat(path, file));
 
-in= input('insert the mean and variance of the gaussian noise in the following format, [mean,variance]');
-immWithNoise=imnoise(imm,'gaussian',in(1),in(2));
+in = input('insert the mean and variance of the gaussian noise in the following format, [mean,variance]');
+immWithNoise = imnoise(imm, 'gaussian', in(1), in(2));
 
-tmp=size(size(mat));
+tmp = size(size(mat));
 
 %if the image is rgb show the histograms of each colours
-if(tmp(2)==3)
+if (tmp(2) == 3)
     figure(1)
-    
-    subplot(2,1,1);
+subplot(2, 1, 1);
     title('image');
     imshow(imm);
-    
-    subplot(2,1,2);
+subplot(2, 1, 2);
     imhist(imm);
-    
+
     figure(2)
-    subplot(2,3,2);
+    subplot(2, 3, 2);
     imshow(immWithNoise);
-    
-    subplot(2,3,4);
-    
-    imhist(immWithNoise(:,:,1));
+subplot(2, 3, 4);
+
+imhist(immWithNoise(:, :, 1));
     myHist = findobj(gca, 'Type', 'Stem');
     % Change the color to red
     myHist.Color = [1 0 0];
-    
-    subplot(2,3,5);
-    imhist(immWithNoise(:,:,2));
+subplot(2, 3, 5);
+imhist(immWithNoise(:, :, 2));
     myHist = findobj(gca, 'Type', 'Stem');
     % Change the color to green
     myHist.Color = [0 1 0];
-    
-    subplot(2,3,6);
-    imhist(immWithNoise(:,:,1));
+subplot(2, 3, 6);
+imhist(immWithNoise(:, :, 1));
 else
     figure(1)
-    
-    subplot(2,2,1);
+subplot(2, 2, 1);
     title('image');
     imshow(imm);
 
-    subplot(2,2,3);
+    subplot(2, 2, 3);
     imhist(imm);
 
-     subplot(2,2,2);
+    subplot(2, 2, 2);
     title('image');
     imshow(immWithNoise);
 
-    subplot(2,2,4);
+    subplot(2, 2, 4);
     imhist(immWithNoise);
 end
