@@ -20,19 +20,19 @@ figure(1);
 % Maximize figure.
 set(gcf, 'Position', get(0, 'Screensize'));
 subplot(2, 2, 1)
-imshow(mat2gray(cA));
+imshow(imadjust(mat2gray(cA)));
 set(get(gca, 'Title'), 'String', 'approximation image');
 
 subplot(2, 2, 2)
-imshow(mat2gray(cH));
+imshow(imadjust(mat2gray(cH)));
 set(get(gca, 'Title'), 'String', 'horizontal image');
 
 subplot(2, 2, 3)
-imshow(mat2gray(cV));
+imshow(imadjust(mat2gray(cV)));
 set(get(gca, 'Title'), 'String', 'vertical image');
 
 subplot(2, 2, 4)
-imshow(mat2gray(cD));
+imshow(imadjust(mat2gray(cD)));
 set(get(gca, 'Title'), 'String', 'diagonal image');
 
 figure(2)
