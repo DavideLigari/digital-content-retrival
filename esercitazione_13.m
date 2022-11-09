@@ -49,6 +49,8 @@ result_cres = idct2(imTrasformed_cres);
 
 figure(1);
 
+% Maximize figure.
+set(gcf, 'Position', get(0, 'Screensize'));
 subplot(2, 3, 1);
 imshow(image);
 set(get(gca, 'Title'), 'String', 'Original');

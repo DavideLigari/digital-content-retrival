@@ -47,6 +47,8 @@ imThreshMaxL(abs(imThreshMaxL) > threshM) = 0;
 imThreshMaxL = idct2(imThreshMaxL);
 
 figure(1)
+% Maximize figure.
+set(gcf, 'Position', get(0, 'Screensize'));
 
 subplot(1, 4, 1)
 imshow(image)

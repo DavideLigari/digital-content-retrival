@@ -17,6 +17,8 @@ imtool close all;
 A=imread("digitalContentRetrival/matlab/rgbImage.jpeg","jpeg");
 
 figure(1)
+% Maximize figure.
+set(gcf, 'Position', get(0, 'Screensize'));
 subplot(1,2,1);
 imshow(A);
 
@@ -30,7 +32,10 @@ pause;
 
 A=imread("digitalContentRetrival/matlab/rgbImage.jpeg","jpeg");
 A=checkGrey(A);
+
 figure(2)
+% Maximize figure.
+set(gcf, 'Position', get(0, 'Screensize'));
 subplot(1,2,1);
 imshow(A);
 

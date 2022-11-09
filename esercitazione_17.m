@@ -21,6 +21,8 @@ tmpImm=im2double(immWithNoise);
 im_denoised = wdenoise(tmpImm,5,"Wavelet","haar");
 
 figure(1);
+% Maximize figure.
+set(gcf, 'Position', get(0, 'Screensize'));
 
 subplot(1, 3, 1)
 imshow(original);

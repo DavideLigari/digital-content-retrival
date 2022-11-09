@@ -15,6 +15,8 @@ A=imread("digitalContentRetrival/matlab/rgbImage.jpeg","jpeg");
 EQ= histeq(A);
 
 figure(1)
+% Maximize figure.
+set(gcf, 'Position', get(0, 'Screensize'));
 subplot(2,2,1);
 imshow(A);
 

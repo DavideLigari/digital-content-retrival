@@ -23,7 +23,8 @@ block3 = image((2 * xLenght) + 1:(3 * xLenght), (2 * yLenght) + 1:(3 * yLenght),
 block4 = image((3 * xLenght) + 1:imSize(1), (3 * yLenght) + 1:imSize(2), :);
 
 figure(1);
-
+% Maximize figure.
+set(gcf, 'Position', get(0, 'Screensize'));
 
 subplot(2, 5, 1);
 imshow(image);

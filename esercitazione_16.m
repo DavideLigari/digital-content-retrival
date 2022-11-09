@@ -19,3 +19,5 @@ original=checkGrey(original);
 figure(1);
 imshow(cH);
 set(get(gca, 'Title'), 'String', 'horizontal edges');
+% Maximize figure.
+set(gcf, 'Position', get(0, 'Screensize'));

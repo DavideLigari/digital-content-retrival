@@ -21,6 +21,8 @@ step = ceil(255/(level - 1));
 new_img = ceil(A./step)*step;
 
 figure(1)
+% Maximize figure.
+set(gcf, 'Position', get(0, 'Screensize'));
 subplot(2,2,1);
 imshow(new_img);
 
