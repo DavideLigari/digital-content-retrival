@@ -25,7 +25,6 @@ imTrasformed = dct2(image);
 imshow(log(abs(imTrasformed)), []);
 colormap parula;
 colorbar;
-pause;
 
 %the threshold is set by the user
 thresh = input("set the threshold ");
