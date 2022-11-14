@@ -18,7 +18,7 @@ original=checkGrey(original);
 in = input('insert the mean and variance of the gaussian noise in the following format, [mean,variance]');
 immWithNoise = imnoise(original, 'gaussian', in(1), in(2));
 tmpImm=im2double(immWithNoise);
-im_denoised = wdenoise(tmpImm,5,"Wavelet","haar");
+im_denoised = wdenoise2(tmpImm,2,"Wavelet","haar");
 
 figure(1);
 % Maximize figure.
