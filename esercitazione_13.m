@@ -21,9 +21,9 @@ imtool close all;
 [file, path] = uigetfile({'*.tiff;*.jpg;*.png;*.jpeg'}, "select an image");
 original = imread(strcat(path, file));
 block_size = 8;
-%convert the image to gray level
+% convert the image to gray level
 image = checkGrey(original);
-%modifies the size of the image to a multiple of block_size
+% modifies the size of the image to a multiple of block_size
 image = resizeImage(image, block_size);
 dim = size(image);
 % it creates a random mask
