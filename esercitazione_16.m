@@ -16,8 +16,14 @@ original = imread(strcat(path, file));
 original=checkGrey(original);
 [cA, cH, cV, cD] = dwt2(original, 'haar');
 
+tmp=zeros(size(cA));
+result= idwt2(tmp, cH, tmp, tmp,'haar');
 figure(1);
-imshow(cH);
+subplot(1,2,1)
+imshow(mat2gray(result));
 set(get(gca, 'Title'), 'String', 'horizontal edges');
+
+subplot(1,2,2)
+imshow(mat2gray(cH));
 % Maximize figure.
 set(gcf, 'Position', get(0, 'Screensize'));

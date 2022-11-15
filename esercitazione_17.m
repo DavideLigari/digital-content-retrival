@@ -19,19 +19,24 @@ in = input('insert the mean and variance of the gaussian noise in the following 
 immWithNoise = imnoise(original, 'gaussian', in(1), in(2));
 tmpImm=im2double(immWithNoise);
 im_denoised = wdenoise2(tmpImm,2,"Wavelet","haar");
-
+[cA, cH, cV, cD] = dwt2(original, 'haar');
+tmp = zeros(size(cH));
+im_denoised_v2 = idwt2(cA, tmp, tmp, tmp, 'haar');
 figure(1);
 % Maximize figure.
 set(gcf, 'Position', get(0, 'Screensize'));
 
-subplot(1, 3, 1)
+subplot(1, 4, 1)
 imshow(original);
 set(get(gca, 'Title'), 'String', 'Original Image');
 
-subplot(1, 3, 2)
-imshow(immWithNoise);
+subplot(1, 4, 2)
+imshow((immWithNoise));
 set(get(gca, 'Title'), 'String', 'noisy Image');
 
-subplot(1, 3, 3)
-imshow(im_denoised);
+subplot(1, 4, 3)
+imshow(mat2gray(im_denoised));
 set(get(gca, 'Title'), 'String', 'Denoised Image');
+subplot(1, 4, 4)
+imshow(mat2gray(im_denoised_v2));
+set(get(gca, 'Title'), 'String', 'Denoised Image v2');
