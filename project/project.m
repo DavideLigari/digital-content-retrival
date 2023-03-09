@@ -1,17 +1,22 @@
-% Clear the workspace, close all figures, and show the workspace panel.
+% Clear any existing variables, the command window, and the figure windows.
 clear;
 clc;
 close all;
-workspace;
-[image, binaryImage,imagePath] = loadImageMask();
 
-% Prompt the user to select the desired action
+% Load the image and the binary mask for the image.
+% Prompt the user to select an image and its mask.
+[image, binaryImage, imagePath] = loadImageMask();
+
+% Prompt the user to select an action.
 action = questdlg('Select an action:', 'Action Selector', 'ZonalMask', 'BlurZone', 'ZonalMask');
 
+% Perform the selected action.
 switch action
     case 'ZonalMask'
-        zonalMask(image, binaryImage,imagePath);
+        % Call the zonalMask function to generate the zonal mask.
+        zonalMask(image, binaryImage, imagePath);
 
     case 'BlurZone'
-        blurImage(image, binaryImage,imagePath);
+        % Call the blurImage function to blur the selected zone.
+        blurImage(image, binaryImage, imagePath);
 end
