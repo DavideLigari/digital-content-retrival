@@ -8,7 +8,7 @@ close all;
 original = imread(strcat(imagePath, imageName));
 
 % Prompt the user to select an action.
-action = questdlg('Select an action:', 'Action Selector', 'ZonalMask', 'BlurZone',"NoiseReduction", 'ZonalMask');
+action = questdlg('Select an action:', 'Action Selector', 'ZonalMask', 'BlurZone', "NoiseReduction", 'ZonalMask');
 
 % Perform the selected action.
 switch action
@@ -26,5 +26,6 @@ switch action
         % Call the blurImage function to blur the selected zone.
         blurImage(image, binaryImage, imagePath);
     case "NoiseReduction"
+        %call the noise reduction function in order to remove the noise
         noiseReduction(original, imagePath);
 end
