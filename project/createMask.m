@@ -2,11 +2,7 @@
 % It returns the original image,
 % a binary mask of the selected shape,
 % and the path of the loaded image.
-function [image, binaryImage, imagePath] = loadImageMask()
-    % Load the image and display it.
-    [imageName, imagePath] = uigetfile({'*.tiff;*.jpg;*.png;*.jpeg'}, "select an image");
-    original = imread(strcat(imagePath, imageName));
-
+function binaryImage = createMask(original)
     % If the loaded image is a color image, prompt the user to convert it to grayscale or not.
     if isRGB(original)
         color = questdlg('would you convert the image to gray scale:', 'Answer', 'Yes', 'No', 'No');
