@@ -3,6 +3,7 @@
 % a binary mask of the selected shape,
 % and the path of the loaded image.
 function [binaryImage, image] = createMask(original)
+    image = original;
     % If the loaded image is a color image, prompt the user to convert it to grayscale or not.
     if isRGB(original)
         color = questdlg('would you convert the image to gray scale:', 'Answer', 'Yes', 'No', 'No');

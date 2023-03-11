@@ -8,7 +8,7 @@ close all;
 original = imread(strcat(imagePath, imageName));
 
 % Prompt the user to select an action.
-action = input('Select one of the following actions : \n 1) ZonalMask \n 2) Blur a zone \n 3) NoiseReduction \n 4) get image informations');
+action = input('Select one of the following actions : \n 1) ZonalMask \n 2) Blur a zone \n 3) NoiseReduction \n 4) Get image informations \n');
 
 % Perform the selected action.
 switch action
