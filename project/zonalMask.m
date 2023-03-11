@@ -21,7 +21,9 @@ function zonalMask(image, binaryImage, imagePath)
     end
 
 end
+
 function insideMasked = insideZonalMask(image, binaryImage)
+
     if isRGB(image)
         insideMasked = image;
 
@@ -39,6 +41,7 @@ function insideMasked = insideZonalMask(image, binaryImage)
         insideMasked(binaryImage) = 0;
     end
 
+    figure(1);
     % Display the masked image.
     subplot(1, 3, 2);
     imshow(insideMasked);
@@ -77,7 +80,7 @@ function outsideMasked = outsideZonalMasking(image, binaryImage)
     width = bottomLine - topLine + 1;
     height = rightColumn - leftColumn + 1;
     outsideMasked = imcrop(outsideMasked, [topLine, leftColumn, width, height]);
-
+    figure(1);
     % Display the masked image.
     subplot(1, 3, 2);
     imshow(outsideMasked);

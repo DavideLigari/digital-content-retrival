@@ -57,7 +57,7 @@ end
 
 function showAndStoreImages(noisy_img, filtered_img, imagePath)
     % This function displays and stores an input image and its filtered version.
-
+    figure(1);
     % Display the noisy image.
     subplot(1, 3, 1);
     imshow(noisy_img);
