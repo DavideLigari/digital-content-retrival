@@ -15,14 +15,14 @@ switch action
     case 1
         % Load the image and the binary mask for the image.
         % Prompt the user to select an image and its mask.
-        binaryImage = createMask(original);
+        [binaryImage, original] = createMask(original);
         % Call the zonalMask function to generate the zonal mask.
         zonalMask(original, binaryImage, imagePath);
 
     case 2
         % Load the image and the binary mask for the image.
         % Prompt the user to select an image and its mask.
-        binaryImage = createMask(original);
+        [binaryImage, original] = createMask(original);
         % Call the blurImage function to blur the selected zone.
         blurImage(original, binaryImage, imagePath);
     case 3

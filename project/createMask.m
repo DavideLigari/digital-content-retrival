@@ -2,7 +2,7 @@
 % It returns the original image,
 % a binary mask of the selected shape,
 % and the path of the loaded image.
-function binaryImage = createMask(original)
+function [binaryImage, image] = createMask(original)
     % If the loaded image is a color image, prompt the user to convert it to grayscale or not.
     if isRGB(original)
         color = questdlg('would you convert the image to gray scale:', 'Answer', 'Yes', 'No', 'No');
@@ -19,7 +19,7 @@ function binaryImage = createMask(original)
 
     % Display the original image.
     figure('Position', get(0, 'Screensize'));
-    subplot(1, 3, 1);
+    subplot(1, 2, 1);
     imshow(image, []);
     title('Original Image');
 

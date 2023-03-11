@@ -43,7 +43,7 @@ function insideMasked = insideZonalMask(image, binaryImage)
 
     figure(1);
     % Display the masked image.
-    subplot(1, 3, 2);
+    subplot(1, 2, 2);
     imshow(insideMasked);
     title('Masked inside region');
 
@@ -82,7 +82,7 @@ function outsideMasked = outsideZonalMasking(image, binaryImage)
     outsideMasked = imcrop(outsideMasked, [topLine, leftColumn, width, height]);
     figure(1);
     % Display the masked image.
-    subplot(1, 3, 2);
+    subplot(1, 2, 2);
     imshow(outsideMasked);
     title('Masked outside region');
 
