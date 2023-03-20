@@ -37,5 +37,9 @@ function [binaryImage, image] = createMask(original)
     end
 
     % Create a binary mask of the selected shape.
+    % The code hFH.createMask() is a method of the handle object hFH which is used to create a binary mask of a selected shape.
+    % The handle object hFH is a graphics object that represents the selected shape on an image, such as a rectangle, ellipse or polygon.
+    % When the method createMask() is called on the handle object, it creates a binary mask with the selected shape filled in with white pixels (value 1)
+    % and the background filled with black pixels (value 0), based on the coordinates of the selected shape.
     binaryImage = hFH.createMask();
 end
