@@ -49,7 +49,7 @@ function blurryImage = blurInside(image, binaryImage)
     %   - blurryImage: the blurry image
 
     % Initialize the standard deviation for the Gaussian blur
-    sigma = 5;
+    sigma = 20;
 
     % Apply the Gaussian blur to the image
     blurredImage = imgaussfilt(image, sigma);
@@ -93,7 +93,7 @@ function blurryImage = blurOutside(image, binaryImage)
     % Outputs:
     %   - blurryImage: the blurry image
     % Define the amount of Gaussian blurring to apply
-    sigma = 5;
+    sigma = 20;
 
     % Create a copy of the original image to work with
     blurredImage = image;
