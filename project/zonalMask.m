@@ -40,8 +40,6 @@ function insideMasked = insideZonalMask(image, binaryImage)
         insideMasked = image;
         insideMasked(binaryImage) = 0;
     end
-
-    figure(1);
     % Display the masked image.
     subplot(1, 2, 2);
     imshow(insideMasked);
