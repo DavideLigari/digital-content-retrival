@@ -1,16 +1,16 @@
 function blurImage(image, binaryImage, imagePath)
-% BLURIMAGE blurs an image either inside or outside a binary mask and displays the result
-%
-% Inputs:
-%   - image: the input image (can be grayscale or RGB)
-%   - binaryImage: a binary mask to define the region to blur
-%   - imagePath: the path to store the blurry image if desired
-%
-% Outputs: none
+    % BLURIMAGE blurs an image either inside or outside a binary mask and displays the result
+    %
+    % Inputs:
+    %   - image: the input image (can be grayscale or RGB)
+    %   - binaryImage: a binary mask to define the region to blur
+    %   - imagePath: the path to store the blurry image if desired
+    %
+    % Outputs: none
 
     % Ask the user whether to blur inside or outside the mask
     blur = questdlg('Select an the zone to blur:', 'Mask Selector', 'Inside', 'Outside', 'Outside');
-    
+
     % Initialize the blurry image
     blurryImage = image;
 
@@ -24,7 +24,7 @@ function blurImage(image, binaryImage, imagePath)
     end
 
     % Display the blurry image
-    subplot(1, 3, 2)
+    subplot(1, 2, 2)
     imshow(blurryImage);
     title('Blurry Image');
 
@@ -39,18 +39,18 @@ function blurImage(image, binaryImage, imagePath)
 end
 
 function blurryImage = blurInside(image, binaryImage)
-% blurs an image inside a binary mask and returns the result
-%
-% Inputs:
-%   - image: the input image (can be grayscale or RGB)
-%   - binaryImage: a binary mask to define the region to blur
-%
-% Outputs:
-%   - blurryImage: the blurry image
+    % blurs an image inside a binary mask and returns the result
+    %
+    % Inputs:
+    %   - image: the input image (can be grayscale or RGB)
+    %   - binaryImage: a binary mask to define the region to blur
+    %
+    % Outputs:
+    %   - blurryImage: the blurry image
 
     % Initialize the standard deviation for the Gaussian blur
     sigma = 5;
-    
+
     % Apply the Gaussian blur to the image
     blurredImage = imgaussfilt(image, sigma);
 
@@ -58,6 +58,7 @@ function blurryImage = blurInside(image, binaryImage)
     if isRGB(image)
         outsideMasked = blurredImage;
         insideMasked = image;
+
         for i = 1:3
             tmpOutsideMasked = blurredImage(:, :, i);
             tmpOutsideMasked(~binaryImage) = 0;
@@ -68,7 +69,7 @@ function blurryImage = blurInside(image, binaryImage)
             insideMasked(:, :, i) = tmpInsideMasked;
         end
 
-    % Apply the mask to the grayscale image
+        % Apply the mask to the grayscale image
     else
         outsideMasked = blurredImage;
         outsideMasked(~binaryImage) = 0;
@@ -81,15 +82,16 @@ function blurryImage = blurInside(image, binaryImage)
     blurryImage = imadd(insideMasked, outsideMasked);
 
 end
+
 function blurryImage = blurOutside(image, binaryImage)
-% blurs an image outside a binary mask and returns the result
-%
-% Inputs:
-%   - image: the input image (can be grayscale or RGB)
-%   - binaryImage: a binary mask to define the region to blur
-%
-% Outputs:
-%   - blurryImage: the blurry image
+    % blurs an image outside a binary mask and returns the result
+    %
+    % Inputs:
+    %   - image: the input image (can be grayscale or RGB)
+    %   - binaryImage: a binary mask to define the region to blur
+    %
+    % Outputs:
+    %   - blurryImage: the blurry image
     % Define the amount of Gaussian blurring to apply
     sigma = 5;
 
@@ -125,7 +127,7 @@ function blurryImage = blurOutside(image, binaryImage)
             insideMasked(:, :, i) = tmpInsideMasked;
         end
 
-    % If the input image is grayscale, do the same operations without looping
+        % If the input image is grayscale, do the same operations without looping
     else
         % Create two copies of the blurred image and the original image
         outsideMasked = blurredImage;
@@ -139,4 +141,3 @@ function blurryImage = blurOutside(image, binaryImage)
     % blurred image
     blurryImage = imadd(insideMasked, outsideMasked);
 end
-

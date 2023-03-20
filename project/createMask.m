@@ -21,7 +21,7 @@ function [binaryImage, image] = createMask(original)
     % Display the original image.
     figure('Position', get(0, 'Screensize'));
     subplot(1, 2, 1);
-    imshow(image, []);
+    imshow(image);
     title('Original Image');
 
     % Prompt the user to select a shape and draw it on the image.
