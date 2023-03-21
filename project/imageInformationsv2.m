@@ -15,6 +15,7 @@ function imageInformationsv2(image)
         [yBlue, x3] = imhist(Blue);
 
         % Display the histogram of each channel.
+        subplot(2,1,1)
         plot(x1, yRed, 'Red', x2, yGreen, 'Green', x3, yBlue, 'Blue');
         title('Histogram of the image ', 'FontSize', 1);
 
@@ -33,25 +34,30 @@ function imageInformationsv2(image)
 
         % Display the image information such as entropy, mean intensity,
         % and contrast for each channel.
-        txt = sprintf('Entropy : %.4f \nRed channel mean intensity level : %.2f\nGreen channel mean intensity level : %.2f\nBlue channel mean intensity level : %.2f\nRed channel contrast : %.2f\nGreen channel contrast : %.2f\nBlue channel contrast : %.2f\n', imageEntropy, red_mean, green_mean, blue_mean, red_contrast, green_contrast, blue_contrast);
-        fprintf(txt)
+              % Display the image information such as entropy, mean intensity,
+        % and contrast for each channel.
+        subplot(2, 1, 2);
+        txt = sprintf('Entropy : %.4f \nRed channel mean intensity : %.2f\nGreen channel mean intensity : %.2f\nBlue channel mean intensity : %.2f\nRed channel contrast : %.2f\nGreen channel contrast : %.2f\nBlue channel contrast : %.2f\n', imageEntropy, red_mean, green_mean, blue_mean, red_contrast, green_contrast, blue_contrast);
+        text(0.5, 0.5, txt, "FontSize", 45); axis off
+
     else
         % Calculate the histogram of the grayscale image.
         [y, x] = imhist(image);
 
         % Display the histogram of the grayscale image.
+        subplot(2, 1, 1);
         title('Histogram of the image ', 'FontSize', 1);
         plot(x, y);
 
         % Calculate the entropy, mean intensity, and contrast of the grayscale image.
         imageEntropy = entropy(image);
         meanImage = mean(image, 'all');
-        contrast = range(image(:));
 
         % Display the image information such as entropy, mean intensity,
         % and contrast of the grayscale image.
-        txt = sprintf('Entropy : %.4f\nMean intensity level : %.2f\nContrast : %.2f\n', imageEntropy, meanImage, contrast);
-        fprintf(txt)
+        subplot(2, 1, 2);
+        txt = sprintf('Entropy : %.4f\nMean intensity : %.2f\nContrast : %.2f\n', imageEntropy, meanImage);
+        text(0.5, 0.5, txt, "FontSize", 45); axis off
     end
 
 end
