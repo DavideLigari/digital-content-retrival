@@ -24,11 +24,6 @@ function imageInformationsv2(image)
         green_mean = mean(Green, 'all');
         blue_mean = mean(Blue, 'all');
 
-        % Calculate the contrast for each channel.
-        red_contrast = range(Red(:));
-        green_contrast = range(Green(:));
-        blue_contrast = range(Blue(:));
-
         % Calculate the entropy of the image.
         imageEntropy = entropy(image);
 
@@ -37,8 +32,8 @@ function imageInformationsv2(image)
               % Display the image information such as entropy, mean intensity,
         % and contrast for each channel.
         subplot(2, 1, 2);
-        txt = sprintf('Entropy : %.4f \nRed channel mean intensity : %.2f\nGreen channel mean intensity : %.2f\nBlue channel mean intensity : %.2f\nRed channel contrast : %.2f\nGreen channel contrast : %.2f\nBlue channel contrast : %.2f\n', imageEntropy, red_mean, green_mean, blue_mean, red_contrast, green_contrast, blue_contrast);
-        text(0.5, 0.5, txt, "FontSize", 45); axis off
+        txt = sprintf('Entropy : %.4f \nRed channel mean intensity level : %.2f\nGreen channel mean intensity level : %.2f\nBlue channel mean intensity level : %.2f', imageEntropy, red_mean, green_mean, blue_mean);
+        text(0.5, 0.5, txt, "FontSize", 20); axis off
 
     else
         % Calculate the histogram of the grayscale image.
@@ -57,7 +52,7 @@ function imageInformationsv2(image)
         % and contrast of the grayscale image.
         subplot(2, 1, 2);
         txt = sprintf('Entropy : %.4f\nMean intensity : %.2f\nContrast : %.2f\n', imageEntropy, meanImage);
-        text(0.5, 0.5, txt, "FontSize", 45); axis off
+        text(0.5, 0.5, txt, "FontSize", 20); axis off
     end
 
 end
