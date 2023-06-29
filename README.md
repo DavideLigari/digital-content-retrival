@@ -10,4 +10,4 @@ The repository is structured as follows:
 
 - **Final Project**: The final project folder includes the MATLAB code for an advanced image processing project. The project applies zonal masking, noise reduction, and histogram equalization techniques to transform input images. It showcases the practical application of image processing algorithms.
 
-- **Report**: The report folder contains a detailed documentation of the final project. It includes a video curriculum that presents the project as a real-world scenario, along with project management tools such as a Work Breakdown Structure (WBS), Gantt chart, and risk analysis. The report provides valuable insights into the project's implementation and management.
+- **Report**: The report folder contains a detailed documentation of the final project. It includes a video curriculum that presents the project as a real-world scenario, along with project management tools such as a Work Breakdown Structure (WBS), Gantt chart, and risk analysis.
